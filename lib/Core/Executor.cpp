@@ -3758,17 +3758,32 @@ std::string Executor::getAddressInfo(ExecutionState &state,
 }
 
 void Executor::terminateState(ExecutionState &state,
-                              StateTerminationType reason) {
+				      StateTerminationType reason) {
+  // > Sun 1, Insert Begin
+  static int counter = 1;
+  // 1, Insert End <
+  
   if (replayKTest && replayPosition!=replayKTest->numObjects) {
     klee_warning_once(replayKTest,
-                      "replay did not consume all objects in test input.");
+	"replay did not consume all objects in test input.");
   }
 
   interpreterHandler->incPathsExplored();
   executionTree->setTerminationType(state, reason);
 
+  // > Sun 2, Insert Begin Log the number of instructions executed by this state to a file
+  std::ofstream out("instructions_per_path.txt", std::ios::app);
+  out << "Test: " << counter << ", State ID: " << &state  << ", Instructions Executed: " << state.steppedInstructions << std::endl;
+  out.close();
+
+  counter++;
+
+  // 2, Insert End <
+
   std::vector<ExecutionState *>::iterator it =
-      std::find(addedStates.begin(), addedStates.end(), &state);
+      std::find(addedStates.begin(), addedStates.end(), &state); 
+
+  
   if (it==addedStates.end()) {
     state.pc = state.prevPC;
 
