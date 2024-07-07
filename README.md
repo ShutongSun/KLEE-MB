@@ -28,7 +28,7 @@ For further information, see the [webpage](https://klee-se.org/).
 
 
 
-# KLEE-Mercedes-Benz
+# Using Klee for finding the longest execution path, Instal
 
 Modifying and using KLEE for finding the longest execution path.
 
@@ -45,7 +45,7 @@ Modifying and using KLEE for finding the longest execution path.
 10. [Add KLEE to Executable Path](#step-10-add-klee-to-executable-path)
 11. [Install Clang](#step-11-install-clang)
 12. [Include klee to Executable](#step-12-include-klee-to-executable)
-
+13. [Updating from Klee](#update-from-klee)
 ---
 
 ### Step 1: Install Required Dependencies
@@ -159,5 +159,21 @@ export CPLUS_INCLUDE_PATH=$HOME/klee/klee/include:$CPLUS_INCLUDE_PATH
 ```bash
 source ~/.bashrc
 ```
+
+
+### Update from klee
+```bash
+git clone https://github.com/ShutongSun/KLEE-MB.git
+cd KLEE-MB
+
+git remote add upstream https://github.com/klee/klee.git
+
+git fetch upstream
+
+git rebase upstream/master
+
+
+```
+
 
 ---
