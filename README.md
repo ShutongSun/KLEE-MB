@@ -28,9 +28,7 @@ For further information, see the [webpage](https://klee-se.org/).
 
 
 
-# Using Klee for finding the longest execution path, Instal
-
-Modifying and using KLEE for finding the longest execution path.
+# Using Klee for finding the longest execution path, Installation steps
 
 ## Inhaltsverzeichnis
 1. [Install Required Dependencies](#step-1-install-required-dependencies)
