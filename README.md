@@ -145,7 +145,7 @@ sudo apt-get install -y clang-13 llvm-13 llvm-13-dev llvm-13-tools
 vim ~/.bashrc
 ```
 
-#### Fügen Sie die folgenden Zeilen hinzu:
+#### Add these lines
 ```bash
 export C_INCLUDE_PATH=$HOME/klee/klee/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=$HOME/klee/klee/include:$CPLUS_INCLUDE_PATH
