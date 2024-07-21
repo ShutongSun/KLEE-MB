@@ -30,7 +30,6 @@ For further information, see the [webpage](https://klee-se.org/).
 
 # Using Klee for finding the longest execution path, Installation steps
 
-## Inhaltsverzeichnis
 1. [Install Required Dependencies](#step-1-install-required-dependencies)
 2. [Install Python Packages](#step-2-install-python-packages)
 3. [Install LLVM](#step-3-install-llvm)
@@ -48,7 +47,6 @@ For further information, see the [webpage](https://klee-se.org/).
 
 ### Step 1: Install Required Dependencies
 
-Aktualisieren Sie die Paketlisten und installieren Sie die erforderlichen Abhängigkeiten.
 
 ```bash
 sudo apt-get update
@@ -125,12 +123,12 @@ make
 vim ~/.bashrc
 ```
 
-#### Fügen Sie die folgende Zeile hinzu:
+#### Add this line:
 ```bash
 export PATH="$HOME/klee/klee/build/bin:$PATH"
 ```
 
-#### Laden Sie die Änderungen:
+#### Update the changes:
 ```bash
 source ~/.bashrc
 ```
